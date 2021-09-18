@@ -64,7 +64,7 @@ $(document).ready(function() {
    close.click(function() {
        modal.hide();
    });
-  $(".what-you-want").submit(function(event) {
+  $(".order").submit(function(event) {
       // event.preventDefault();
       var size = $("#size").val();
       
@@ -82,35 +82,35 @@ $(document).ready(function() {
       newPizzaOrder.finalPrice();
     
       newPizzaOrder.toBeDelivered();
-      alert ("you have ordered " + numberOfPizza + " " + size + " " + type + " pizza(s) with a  " + crust + " crust and  " + toppings + " topping. It will be " + delivery + " .");
+      alert ("you have ordered " + numberOfPizza + " " + size + " " + type + " pizza(s) with a  " + crust + " crust and  " + toppings + " topping");
       alert ("The total cost is  " + newPizzaOrder.price + " /= " +  " For Delivery fill the contact form below");
       resetFieldValues();
   });
   $("#delivery").click(function() {
-      $("#contactform").slideDown();
+      $("#customerDetails").slideDown();
     });
-    $("#submitbutton").click(function(event) {
+    $("#checkOut").click(function(event) {
       // event.preventDefault();
-      var inputtedFirstName = $("input#first-name").val();
-      var inputtedLastName = $("input#last-name").val();
-      var inputtedEmailAddress = $("input#email-address").val();
-      var inputtedPhoneNumber = $("input#phone-number").val();
-      alert(inputtedFirstName + " " + inputtedLastName + " Your order will be ready in 15mins and will be delivered in the next 20 mins")
-      // $("#contactform").hide();
-      var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedEmailAddress, inputtedPhoneNumber);
-      $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
-      $("input#first-name").val("");
-      $("input#last-name").val("");
-      $("input#email-address").val("");
-      $("input#phone-number").val();
-      $(".contact").last().click(function() {
-        $("#show-contact").show();
-        $("#show-contact h2").text(newContact.firstName);
-        $(".first-name").text(newContact.firstName);
-        $(".last-name").text(newContact.lastName);
-        $(".email-address").text(newContact.email);
-        $(".phone-number").text(newContact.phonenumber);
-      });
+      var inputtedName = $("input#name").val();
+      var inputtedNumber = $("input#number").val();
+      var inputtedAddress = $("input#address").val();
+      
+      alert("Hey" + " " + inputtedName + " " + " Your order will be ready in 15mins and will be delivered in the next 20 mins.")
+       $("#contactform").hide();
+       var newContact = new Contact(inputtedName, inputtedAddress, inputtedNumber);
+       $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
+       $("input#name").val("");
+       $("input#last-name").val("");
+       $("input#email-address").val("");
+       $("input#phone-number").val();
+       $(".contact").last().click(function() {
+         $("#show-contact").show();
+         $("#show-contact h2").text(newContact.firstName);
+         $(".first-name").text(newContact.firstName);
+         $(".last-name").text(newContact.lastName);
+         $(".email-address").text(newContact.email);
+         $(".phone-number").text(newContact.phonenumber);
+       });
     });
     $(".sendicon").click(function(event) {
       alert("Thank you for your feedback");
