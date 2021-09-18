@@ -82,8 +82,8 @@ $(document).ready(function() {
       newPizzaOrder.finalPrice();
     
       newPizzaOrder.toBeDelivered();
-      alert ("you have ordered " + numberOfPizza + " " + size + " " + type + " pizza(s) with a  " + crust + " crust and  " + toppings + " topping");
-      alert ("The total cost is  " + newPizzaOrder.price + " /= " +  " For Delivery fill the contact form below");
+      document.getElementById("orderSummary").innerHTML= "you have ordered " + numberOfPizza + " " + size + " " + type + " pizza(s) with a  " + crust + " crust and  " + toppings + " topping"
+      document.getElementById("orderSummary").innerHTML= "The total cost is  " + newPizzaOrder.price + " /= " +  " For Delivery fill the contact form below"
       resetFieldValues();
   });
   $("#delivery").click(function() {
@@ -95,7 +95,7 @@ $(document).ready(function() {
       var inputtedNumber = $("input#number").val();
       var inputtedAddress = $("input#address").val();
       
-      alert("Hey" + " " + inputtedName + " " + " Your order will be ready in 15mins and will be delivered in the next 20 mins.")
+      document.getElementById("orderSummary").innerHTML= "Hey" + " " + inputtedName + " " + " Your order will be ready in 15mins and will be delivered in the next 20 mins."
        $("#contactform").hide();
        var newContact = new Contact(inputtedName, inputtedAddress, inputtedNumber);
        $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
