@@ -1,3 +1,5 @@
+//business logic
+
 function getPizzaOrder(type,crust,toppings,numberOfPizza,delivery,size) {
   this.type = type;
   this.crust = crust;
@@ -53,17 +55,8 @@ function resetFieldValues () {
   crust = "";
   $("#quantity").val("");
 };
-//  start of my user logic
+//  user logic
 $(document).ready(function() {
-   var modal = $(".ordering-plate");
-   var placeOrder = $(".place-order");
-   var close = $(".close-thing")
-   placeOrder.click(function() {
-       modal.show();
-   });
-   close.click(function() {
-       modal.hide();
-   });
   $(".order").submit(function(event) {
       // event.preventDefault();
       var size = $("#size").val();
@@ -92,27 +85,10 @@ $(document).ready(function() {
     $("#checkOut").click(function(event) {
       // event.preventDefault();
       var inputtedName = $("input#name").val();
-      var inputtedNumber = $("input#number").val();
-      var inputtedAddress = $("input#address").val();
       
       document.getElementById("orderSummary").innerHTML= "Hey" + " " + inputtedName + " " + " Your order will be ready in 15mins and will be delivered in the next 20 mins."
        $("#contactform").hide();
-       var newContact = new Contact(inputtedName, inputtedAddress, inputtedNumber);
-       $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
-       $("input#name").val("");
-       $("input#last-name").val("");
-       $("input#email-address").val("");
-       $("input#phone-number").val();
-       $(".contact").last().click(function() {
-         $("#show-contact").show();
-         $("#show-contact h2").text(newContact.firstName);
-         $(".first-name").text(newContact.firstName);
-         $(".last-name").text(newContact.lastName);
-         $(".email-address").text(newContact.email);
-         $(".phone-number").text(newContact.phonenumber);
-       });
+       
     });
-    $(".sendicon").click(function(event) {
-      alert("Thank you for your feedback");
-    });
+    
 });
