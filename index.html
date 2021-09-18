@@ -30,9 +30,6 @@
           <li class="nav-item">
             <a href="#order" class="nav-link">ORDER</a>
           </li>
-          <li class="nav-item">
-            <a href="#gallery" class="nav-link">GALLERY</a>
-          </li>
         </ul>
       </div>
     </div>
@@ -48,9 +45,7 @@
           Pizza is one of the most popular foods in the world, and for good reason! It’s affordable, delicious, and there’s an option for everyone. Also, don’t listen to people who tell you you can’t eat a whole pizza, you don’t need that kind of negativity in your life!!
         </p>
   
-        <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#order">
-          Order Now
-        </button>
+        <a href="#order" class="btn btn-warning">Order Now</a>
       </div>
       <img
         class="img-fluid w-50 h-50 d-none d-sm-block container" src="./images/pexels-polina-tankilevitch-4109111.jpg"alt=""/>
@@ -70,9 +65,7 @@
         <p class="lead my-4 lh-lg">
           We Knead Pizza is a fast food restaurant offering delivery and take-out food service.We strive to give our customers the best,having fresh toppings always and great service.Our customers can count on prompt and quality service, high-quality food made from high-quality products with the freshest ingredients available.
         </p>
-        <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#menu" >
-          Chekout Menu
-        </button>
+        <a href="#menu" class="btn btn-warning">Check out menu</a>
       </div>
       
     </div>
@@ -83,7 +76,7 @@
 <!-- menu -->
 <section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start" id="menu">
   <div class="container">
-    <h3 class="text-warning text-center display-4">PIZZA MENU</h3>
+    <h3 class="text-warning text-center display-4 p-5">PIZZA MENU</h3>
     <div class="row">
       <div class="col">
         <div class="container">
@@ -149,10 +142,108 @@
   </div>
 
 </section>
+
 <!-- order -->
-<section></section>
-<!-- gallery -->
-<section></section>
+<section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start" id="order">
+  <h1 class="text-center p-3"> <span class="text-warning">PLACE</span>  AN ORDER</h1>
+  <div class="container">
+    <div class="row">
+       <div class="col-md-6 shadow p-4">
+            <form>
+                <div class="form-group">
+                    <label class="fs-5" for="">Select Pizza</label>
+                    <select class="form-control mb-4" id="pizzaType" required>
+                      <option>...</option>
+                      <option>Pepperoni</option>
+                      <option>Meat Deluxe</option>
+                      <option>Hawaiian</option>
+                      <option>Chicken Tikka</option>
+                      <option>Margharita</option>
+                      <option>Mushroom</option>
+                      <option>Vegetable Pizza</option>
+                      <option>Chicken Tikka</option>
+                  </select>
+                </div>
+                <div class="form-group mt-2">
+                    <label class="fs-5" for="">Size</label>
+                    <select class="form-control mb-4" id="pizzaSize" required>
+                      <option>...</option>
+                      <option>Small</option>
+                      <option>Medium</option>
+                      <option>Large</option>
+                  </select>
+                </div>
+                <div class="form-group mt-2">
+                    <label class="fs-5" for="">Crust</label>
+                    <select class="form-control mb-4" id="pizza-crust" required>
+                      <option>...</option>
+                      <option>Gluten Free</option>
+                      <option>Thin crust</option>
+                      <option>Original</option>
+                      <option>Flat bread</option>
+                      <option>Stuffed</option>
+                  </select>
+                </div>
+                
+                <div class="form-check p3">
+                  <input class="form-check-input" type="radio" value="">
+                  <label  class="form-check-label fs-5 mb-3" for="">
+                    Pepperoni
+                  </label>
+                </div>
+                <div class="form-check p3">
+                  <input class="form-check-input" type="radio" value="">
+                  <label class="form-check-label fs-5 mb-3" for="">
+                    ExtraCheese
+                  </label>
+                </div>
+                <div class="form-check p3">
+                  <input class="form-check-input" type="radio" value="">
+                  <label class="form-check-label fs-5 mb-3" for="">
+                    Mushrooms
+                  </label>
+                </div>
+                <div class="form-check p3">
+                  <input class="form-check-input" type="radio" value="">
+                  <label class="form-check-label fs-5 mb-3" for="">
+                    Bacon
+                  </label>
+                </div>
+                <div class="form-group mt-2">
+                  <label for="">Number</label>
+                  <input class="fs-5 " type="number"  placeholder="PizzaNo" min="1">
+                </div>
+                <div class="mt-4 text-center">
+                  <button type="submit" name="submitButton" class="btn btn-warning submit" id="placeorder">Place Order</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-6 shadow">
+            <h5 class="text-center p-5 fw-bold">Contact Details</h5>
+            <form>
+                <div class="form-group">
+                    <label class="fs-5" for="">Name</label>
+                    <input class="mb-5" type="text" placeholder="fullname">
+                </div>
+                <div class="form-group">
+                  <label class="fs-5" for="">Number</label>
+                  <input  class="mb-5"type="number" placeholder="phone number">
+                </div>
+                <div class="form-group">
+                  <label class="fs-5" for="">Address</label>
+                  <input class="mb-3" type="text" placeholder="location">
+                </div>
+                <div class="mt-4 text-center">
+                  <button type="submit" name="submitButton" class="btn btn-warning submit" id="placeorder">Chekout</button>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>
+
+</section>
+
 <!-- footer -->
 
 
