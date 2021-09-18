@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css");
-.home{
-  
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+body{
+  font-family: 'Poppins', sans-serif;
 }
