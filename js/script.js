@@ -1,6 +1,6 @@
 //business logic
-
-function getPizzaOrder(type,crust,toppings,numberOfPizza,delivery,size) {
+// constructor function for pizza orders
+function pizzaOrder(type,crust,toppings,numberOfPizza,delivery,size) {
   this.type = type;
   this.crust = crust;
   this.toppings = toppings;
@@ -13,7 +13,7 @@ function getPizzaOrder(type,crust,toppings,numberOfPizza,delivery,size) {
   this.deliveryPrice = 0;
   this.price = 0;
 };
-getPizzaOrder.prototype.finalPrice = function () {
+pizzaOrder.prototype.finalPrice = function () {
   if (this.size === "small") {
       this.sizePrice = 550;
   } else if (this.size === "medium") {
@@ -41,7 +41,7 @@ getPizzaOrder.prototype.finalPrice = function () {
   };
   this.price =(this.sizePrice +this.crustPrice + this.toppingPrice) * this.numberOfPizza;
 };
-getPizzaOrder.prototype.toBeDelivered = function () {
+pizzaOrder.prototype.toBeDelivered = function () {
   if (this.delivery === "delivery") {
       this.price += 250;
   }else if(this.delivery ==="noDelivery") {
@@ -71,12 +71,12 @@ $(document).ready(function() {
    
       var delivery = $("#delivery").val();
      
-      var newPizzaOrder = new getPizzaOrder(type,crust,toppings,numberOfPizza,delivery,size);
+      var newPizzaOrder = new pizzaOrder(type,crust,toppings,numberOfPizza,delivery,size);
       newPizzaOrder.finalPrice();
     
       newPizzaOrder.toBeDelivered();
       document.getElementById("orderSummary").innerHTML= "you have ordered " + numberOfPizza + " " + size + " " + type + " pizza(s) with a  " + crust + " crust and  " + toppings + " topping"
-      document.getElementById("orderSummary").innerHTML= "The total cost is  " + newPizzaOrder.price + " /= " +  " For Delivery fill the contact form below"
+      document.getElementById("orderSummary").innerHTML= "The total cost is  " + newPizzaOrder.price + " /= " +  " For Delivery fill the form above"
       resetFieldValues();
   });
   $("#delivery").click(function() {
