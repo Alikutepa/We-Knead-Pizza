@@ -61,6 +61,8 @@ function resetFieldValues () {
   $("#quantity").val("");
 };
 //  user logic
+
+//getting values from user
 $(document).ready(function() {
   $(".order").submit(function() {
       
@@ -80,7 +82,7 @@ $(document).ready(function() {
       newPizzaOrder.finalPrice();
     
       newPizzaOrder.makeDelivery();
-      window.alert("you have ordered " + numberOfPizza + " " + size + " " + type + " pizza(s) with a  " + crust + " crust and  " + toppings + " topping");
+      window.alert("You have ordered " + numberOfPizza + " " + size + " " + type + " pizza(s) with a  " + crust + " crust and  " + toppings + " topping");
       window.alert("The total cost is  " + newPizzaOrder.price + " /= " +  " For Delivery fill the form below");
       resetFieldValues();
   });
@@ -88,9 +90,9 @@ $(document).ready(function() {
     $("#checkOut").click(function(event) {
       // event.preventDefault();
       var inputtedName = $("#name").val();
+      var inputtedaddress =$("#address").val();
+      window.alert("Hey" + " " + inputtedName + " " + " Your order will be ready in 15mins and will be delivered to" + " " + inputtedaddress + " " + "in the next 20 mins.")
+      window.alert("Your total order will be" + newPizzaOrder.price + delivery)
       
-      window.alert("Hey" + " " + inputtedName + " " + " Your order will be ready in 15mins and will be delivered in the next 20 mins.")
-      
-    });
-    
+    }); 
 });
