@@ -1,5 +1,6 @@
 //business logic
-// constructor function for pizza orders
+
+//object constructor function for pizza orders
 function pizzaOrder(type,crust,toppings,numberOfPizza,delivery,size) {
   this.type = type;
   this.crust = crust;
@@ -13,7 +14,9 @@ function pizzaOrder(type,crust,toppings,numberOfPizza,delivery,size) {
   this.deliveryPrice = 0;
   this.price = 0;
 };
-//conditions for pricing different pizza sizes /crust type and toppings
+
+//adding new property to my object with a method to calculate prices 
+//setting prices for different pizza sizes crust type and toppings
 pizzaOrder.prototype.finalPrice = function () {
   if (this.size === "small") {
       this.sizePrice = 550;
@@ -42,7 +45,9 @@ pizzaOrder.prototype.finalPrice = function () {
   };
   this.price =(this.sizePrice +this.crustPrice + this.toppingPrice) * this.numberOfPizza;
 };
-pizzaOrder.prototype.toBeDelivered = function () {
+
+//add new property to determine prices when delivered
+pizzaOrder.prototype.makeDelivery = function () {
   if (this.delivery === "deliver") {
       this.price += 250;
   }else if(this.delivery ==="pick") {
@@ -75,7 +80,7 @@ $(document).ready(function() {
       var newPizzaOrder = new pizzaOrder(type,crust,toppings,numberOfPizza,delivery,size);
       newPizzaOrder.finalPrice();
     
-      newPizzaOrder.toBeDelivered();
+      newPizzaOrder.makeDelivery();
       window.alert("you have ordered " + numberOfPizza + " " + size + " " + type + " pizza(s) with a  " + crust + " crust and  " + toppings + " topping");
       window.alert("The total cost is  " + newPizzaOrder.price + " /= " +  " For Delivery fill the form below");
       resetFieldValues();
