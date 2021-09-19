@@ -43,9 +43,9 @@ pizzaOrder.prototype.finalPrice = function () {
   this.price =(this.sizePrice +this.crustPrice + this.toppingPrice) * this.numberOfPizza;
 };
 pizzaOrder.prototype.toBeDelivered = function () {
-  if (this.delivery === "delivery") {
+  if (this.delivery === "deliver") {
       this.price += 250;
-  }else if(this.delivery ==="noDelivery") {
+  }else if(this.delivery ==="pick") {
       this.price +=0;
   };
 };
