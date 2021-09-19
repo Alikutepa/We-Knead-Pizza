@@ -13,6 +13,7 @@ function pizzaOrder(type,crust,toppings,numberOfPizza,delivery,size) {
   this.deliveryPrice = 0;
   this.price = 0;
 };
+//conditions fo
 pizzaOrder.prototype.finalPrice = function () {
   if (this.size === "small") {
       this.sizePrice = 550;
@@ -32,11 +33,11 @@ pizzaOrder.prototype.finalPrice = function () {
   }else if (this.crust === "flatBread") {
       this.crustPrice = 150;
   };
-  if (this.size === "small") {
+  if (this.sizePrice === "550") {
       this.toppingPrice = 100;
-  }else if (this.size === "medium") {
+  }else if (this.sizePrice === "850") {
       this.toppingPrice = 150;
-  }else if (this.size === "large") {
+  }else if (this.sizePrice === "1000") {
       this.toppingPrice = 200;
   };
   this.price =(this.sizePrice +this.crustPrice + this.toppingPrice) * this.numberOfPizza;
@@ -75,8 +76,8 @@ $(document).ready(function() {
       newPizzaOrder.finalPrice();
     
       newPizzaOrder.toBeDelivered();
-      document.getElementById("orderSummary").innerHTML= "you have ordered " + numberOfPizza + " " + size + " " + type + " pizza(s) with a  " + crust + " crust and  " + toppings + " topping"
-      document.getElementById("orderSummary").innerHTML= "The total cost is  " + newPizzaOrder.price + " /= " +  " For Delivery fill the form above"
+      window.alert("you have ordered " + numberOfPizza + " " + size + " " + type + " pizza(s) with a  " + crust + " crust and  " + toppings + " topping");
+      window.alert("The total cost is  " + newPizzaOrder.price + " /= " +  " For Delivery fill the form below");
       resetFieldValues();
   });
   $("#delivery").click(function() {
@@ -86,8 +87,8 @@ $(document).ready(function() {
       // event.preventDefault();
       var inputtedName = $("input#name").val();
       
-      document.getElementById("orderSummary").innerHTML= "Hey" + " " + inputtedName + " " + " Your order will be ready in 15mins and will be delivered in the next 20 mins."
-       $("#contactform").hide();
+      window.alert("Hey" + " " + inputtedName + " " + " Your order will be ready in 15mins and will be delivered in the next 20 mins.")
+       //$("#contactform").hide();
        
     });
     
