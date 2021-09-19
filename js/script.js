@@ -15,8 +15,7 @@ function pizzaOrder(type,crust,toppings,numberOfPizza,delivery,size) {
   this.price = 0;
 };
 
-//adding new property to my object with a method to calculate prices 
-//setting prices for different pizza sizes crust type and toppings
+//adding new property to object with a method to calculate prices
 pizzaOrder.prototype.finalPrice = function () {
   if (this.size === "small") {
       this.sizePrice = 550;
@@ -46,7 +45,7 @@ pizzaOrder.prototype.finalPrice = function () {
   this.price =(this.sizePrice +this.crustPrice + this.toppingPrice) * this.numberOfPizza;
 };
 
-//add new property to determine prices when delivered
+//add new property to determine prices when delivered/not
 pizzaOrder.prototype.makeDelivery = function () {
   if (this.delivery === "deliver") {
       this.price += 250;
@@ -85,16 +84,13 @@ $(document).ready(function() {
       window.alert("The total cost is  " + newPizzaOrder.price + " /= " +  " For Delivery fill the form below");
       resetFieldValues();
   });
-  $("#delivery").click(function() {
-      $("#customerDetails").slideDown();
-    });
+  
     $("#checkOut").click(function(event) {
       // event.preventDefault();
-      var inputtedName = $("input#name").val();
+      var inputtedName = $("#name").val();
       
       window.alert("Hey" + " " + inputtedName + " " + " Your order will be ready in 15mins and will be delivered in the next 20 mins.")
-       //$("#contactform").hide();
-       
+      
     });
     
 });
