@@ -58,8 +58,8 @@ function resetFieldValues () {
 };
 //  user logic
 $(document).ready(function() {
-  $(".order").submit(function(event) {
-      // event.preventDefault();
+  $(".order").submit(function() {
+      
       var size = $("#size").val();
       
       var type = $("#type").val();
