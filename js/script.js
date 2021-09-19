@@ -13,7 +13,7 @@ function pizzaOrder(type,crust,toppings,numberOfPizza,delivery,size) {
   this.deliveryPrice = 0;
   this.price = 0;
 };
-//conditions fo
+//conditions for pricing different pizza sizes /crust type and toppings
 pizzaOrder.prototype.finalPrice = function () {
   if (this.size === "small") {
       this.sizePrice = 550;
@@ -33,11 +33,11 @@ pizzaOrder.prototype.finalPrice = function () {
   }else if (this.crust === "flatBread") {
       this.crustPrice = 150;
   };
-  if (this.sizePrice === "550") {
+  if (this.size === "small") {
       this.toppingPrice = 100;
-  }else if (this.sizePrice === "850") {
+  }else if (this.size === "medium") {
       this.toppingPrice = 150;
-  }else if (this.sizePrice === "1000") {
+  }else if (this.size === "large") {
       this.toppingPrice = 200;
   };
   this.price =(this.sizePrice +this.crustPrice + this.toppingPrice) * this.numberOfPizza;
