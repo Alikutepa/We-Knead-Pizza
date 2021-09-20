@@ -53,19 +53,23 @@ pizzaOrder.prototype.makeDelivery = function () {
       this.price +=0;
   };
 };
+
+//reset field values once order is placed 
 function resetFieldValues () {
-  size = "";
-  type = "";
-  toppings = "";
-  crust = "";
+  $("#size").val("");
+  $("#type").val("");
+  $("#toppings").val("");
+  $("#crust").val("");
   $("#quantity").val("");
+  $("#name").val("");
+  $("#address").val("");
 };
 //  user logic
 
 //getting values from user
 $(document).ready(function() {
-  $(".order").submit(function() {
-      
+  $(".order").submit(function(event) {
+      event.preventDefault();
       var size = $("#size").val();
       
       var type = $("#type").val();
@@ -93,6 +97,6 @@ $(document).ready(function() {
       var inputtedaddress =$("#address").val();
       window.alert("Hey" + " " + inputtedName + " " + " Your order will be ready in 15mins and will be delivered to" + " " + inputtedaddress + " " + "in the next 20 mins.")
       window.alert("Your total order will be" + newPizzaOrder.price + delivery);
-      
+      resetFieldValues();
     }); 
 });
