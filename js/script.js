@@ -88,11 +88,11 @@ $(document).ready(function() {
   });
   
     $("#checkOut").click(function(event) {
-      // event.preventDefault();
+      event.preventDefault();
       var inputtedName = $("#name").val();
       var inputtedaddress =$("#address").val();
       window.alert("Hey" + " " + inputtedName + " " + " Your order will be ready in 15mins and will be delivered to" + " " + inputtedaddress + " " + "in the next 20 mins.")
-      window.alert("Your total order will be" + newPizzaOrder.price + delivery)
+      window.alert("Your total order will be" + newPizzaOrder.price + delivery);
       
     }); 
 });
