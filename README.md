@@ -5,7 +5,7 @@
 This is a web application that will allow my customers to order different types of pizzas, with a crust they prefer as well as the toppings they would like on their pizza. This application also offers customers the option of having the pizza delivered to where they are.
 
 ## Live link
-This is the live link to the project 
+This is the [live](https://alikutepa.github.io/We-Knead-Pizza/) link to the project 
 
 ## Setup/Installation Requirements
 * Open your terminal
@@ -23,4 +23,4 @@ None
 ## Support and contact details
 If you run into any issue or have ideas on how to make this website better, kindly contact me through this email: jalikutepa@gmail.com
 ### License
-This project is under the MIT license. (c) 2021 **JULIANA ALIKUTEPA**
+This project is under the [MIT License](license). (c) 2021 **JULIANA ALIKUTEPA**
